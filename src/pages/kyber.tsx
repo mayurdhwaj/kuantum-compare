@@ -7,10 +7,10 @@ import {kyber} from 'kyber-crystals';
 const Kyber: NextPage = () => {
 
     const [loading, setLoading] = useState(0)
-    const [publicKey, setPublicKey] = useState<string>(null)
-    const [privateKey, setPrivateKey] = useState<string>(null)
-    const [cyphertext, setCyphertext] = useState<string>(null)
-    const [secret, setSecret] = useState<string>(null)
+    const [publicKey, setPublicKey] = useState<string | null>(null)
+    const [privateKey, setPrivateKey] = useState<string | null>(null)
+    const [cyphertext, setCyphertext] = useState<string | null>(null)
+    const [secret, setSecret] = useState<string | null>(null)
 
     const work = async () => {
         const keyPair = await kyber.keyPair()
@@ -22,7 +22,7 @@ const Kyber: NextPage = () => {
         setLoading(2)
     }
 
-    const ref = useRef<HTMLElement>(null)
+    const ref = useRef<HTMLElement | null>(null)
     useEffect(() => {
         ref.current && autoAnimate(ref.current)
     }, [ref])

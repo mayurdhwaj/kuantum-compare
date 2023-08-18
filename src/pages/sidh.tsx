@@ -7,10 +7,10 @@ import { sidh } from 'sidh';
 const SIDH: NextPage = () => {
 
     const [loading, setLoading] = useState(0)
-    const [publicKey, setPublicKey] = useState<any>(null)
-    const [privateKey, setPrivateKey] = useState<any>(null)
-    const [cyphertext, setCyphertext] = useState<any>(null)
-    const [secret, setSecret] = useState<any>(null)
+    const [publicKey, setPublicKey] = useState<string>(null)
+    const [privateKey, setPrivateKey] = useState<string>(null)
+    const [cyphertext, setCyphertext] = useState<string>(null)
+    const [secret, setSecret] = useState<string>(null)
 
     const work = async () => {
         const keyPair = await sidh.keyPair()
@@ -22,7 +22,7 @@ const SIDH: NextPage = () => {
         setLoading(2)
     }
 
-    const ref = useRef<any>(null)
+    const ref = useRef<HTMLElement>(null)
     useEffect(() => {
         ref.current && autoAnimate(ref.current)
     }, [ref])

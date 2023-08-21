@@ -25,7 +25,7 @@ const Kyber: NextPage = () => {
     const ref = useRef<HTMLElement | null>(null)
     useEffect(() => {
         if(ref.current && autoAnimate){
-            (ref.current.focus())}
+            ref.current.focus()}
     }, [ref])
 
     return (
